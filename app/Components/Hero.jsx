@@ -34,7 +34,7 @@ const IPhoneModel = ({ scrollProgress }) => {
     />
   );
 };
-// sec anime
+
 
 const AnimatedSection = () => {
   const [isMenuIconVisible, setIsMenuIconVisible] = useState(false);
