@@ -2,32 +2,90 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+html {
+    scroll-behavior: smooth;
+  }
+  /* get to know title */
+  .title {
+    position: relative; /* Ensure the title container is positioned relative */
+  }
+  /* features */
+  .box1 {
+    position: relative; /* Ensure boxes are positioned relative for animation */
+  }
+  /* loader */
+  /* Loader.css */
+.loader-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.8); /* Semi-transparent background */
+  z-index: 1000; /* Ensure it appears above other content */
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+.loader-image {
+  width: 100px; /* Adjust size as needed */
+  height: auto;
+}
+/* Loader.css */
+.loader-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.8); /* Semi-transparent background */
+  z-index: 1000; /* Ensure it appears above other content */
+}
+
+.loader {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.loader-image {
+  width: 100px; /* Adjust size as needed */
+  height: auto;
+  animation: zoomInOut 2s infinite; /* Apply the animation */
+}
+
+/* Define the zoom-in and zoom-out animation */
+@keyframes zoomInOut {
+  0% {
+    transform: scale(0.8);
+    opacity: 0.5;
+  }
+  50% {
+    transform: scale(1.2);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(0.8);
+    opacity: 0.5;
   }
 }
-
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+/* feature animations */
+.bx1 {
+  opacity: 0;
+  transform: translateY(-100px); /* Initially hidden above the viewport */
+  transition: opacity 0.5s ease, transform 0.5s ease;
 }
-
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
+/* pricing plan */
+.ani {
+  transform: translateX(-100px);
+  opacity: 0;
+}
+/* Add to your CSS or Tailwind config */
+.box0, .box2, .box3 {
+  transform: translateY(20px);
+  opacity: 0;
 }

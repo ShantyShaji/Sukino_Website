@@ -1,0 +1,43 @@
+/* styles/animations.module.css */
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideDown {
+  from { transform: translateY(-20px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes slideUp {
+  from { transform: translateY(20px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+.imageFadeIn {
+  animation: fadeIn 1s ease-in forwards;
+}
+
+.menuIconSlideDown {
+  animation: slideDown 2s ease-in forwards;
+}
+
+.downloadButtonSlideDown {
+  animation: slideDown 2s ease-in forwards;
+}
+
+.headingSlideUp {
+  animation: slideUp 2s ease-in forwards;
+  animation-delay: 0.5s;
+}
+
+.paragraphSlideUp {
+  animation: slideUp 2s ease-in forwards;
+  animation-delay: 1s;
+}
+
+.hidden {
+  opacity: 0;
+  visibility: hidden;
+}
